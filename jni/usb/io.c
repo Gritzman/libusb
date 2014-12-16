@@ -1,4 +1,4 @@
-/*
+/* 
  * I/O functions for libusb
  * Copyright (C) 2007-2009 Daniel Drake <dsd@gentoo.org>
  * Copyright (c) 2001 Johannes Erdfelt <johannes@erdfelt.com>
@@ -26,6 +26,7 @@
 #include <string.h>
 #include <time.h>
 
+//Android compatibility
 #ifndef TIMESPEC_TO_TIMEVAL
 #define TIMESPEC_TO_TIMEVAL(tv, ts)                     \
         do {                                             \
