@@ -10,7 +10,8 @@ LOCAL_SRC_FILES:= \
 	 io.c \
 	 sync.c \
 	 os/linux_usbfs.c \
-	 os/threads_posix.c 
+	 os/threads_posix.c \
+	 jinterface.c
 			
 LOCAL_LDLIBS := -llog
 
