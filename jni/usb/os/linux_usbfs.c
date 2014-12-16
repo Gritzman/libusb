@@ -2,6 +2,8 @@
  * Linux usbfs backend for libusb
  * Copyright (C) 2007-2009 Daniel Drake <dsd@gentoo.org>
  * Copyright (c) 2001 Johannes Erdfelt <johannes@erdfelt.com>
+ * Copyright (c) 2014 Shachar Gritzman <gritzman@outlook.com> 
+ * - Modified *find_usbfs_path function to support android Lollipop, no root is needed
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -212,53 +214,15 @@ static int check_usb_vfs(const char *dirname)
 
 static const char *find_usbfs_path(void)
 {
-// modified to work with Android L
+//   Android L
 	const char *ret = "/dev/bus/usb";
-// modified to work with Android L
 
 	if (ret != NULL)
 		usbi_dbg("found usbfs at %s", ret);
 
 	return ret;
 }
-//not nedeed on android L
-/* {
-	const char *path = "/dev/bus/usb";
-	const char *ret = NULL;
 
-	if (check_usb_vfs(path)) {
-		ret = path;
-	} else {
-		path = "/proc/bus/usb";
-		if (check_usb_vfs(path))
-			ret = path;
-	}
-
-	//  look for /dev/usbdev*.* if the normal places fail
-	if (ret == NULL) {
-		struct dirent *entry;
-		DIR *dir;
-
-		path = "/dev";
-		dir = opendir(path);
-		if (dir != NULL) {
-			while ((entry = readdir(dir)) != NULL) {
-				if (_is_usbdev_entry(entry, NULL, NULL)) {
-					// found one; that's enough
-					ret = path;
-					usbdev_names = 1;
-					break;
-				}
-			}
-			closedir(dir);
-		}
-	}
-
-	if (ret != NULL)
-		usbi_dbg("found usbfs at %s", ret);
-
-	return ret;
-} */
 
 
 
