@@ -3,7 +3,9 @@
  * Copyright (C) 2007-2009 Daniel Drake <dsd@gentoo.org>
  * Copyright (c) 2001 Johannes Erdfelt <johannes@erdfelt.com>
  * Copyright (c) 2014 Shachar Gritzman <gritzman@outlook.com> 
- * - Modified *find_usbfs_path function to support android Lollipop, no root is needed
+ * 
+ * Modified *find_usbfs_path function to support android SElinux policy and Lollipop, 
+ * no root is needed.
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
