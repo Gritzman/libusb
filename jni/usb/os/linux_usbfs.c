@@ -214,7 +214,7 @@ static int check_usb_vfs(const char *dirname)
 
 static const char *find_usbfs_path(void)
 {
-//   Android L
+/*  Android SElinux workaround */
 	const char *ret = "/dev/bus/usb";
 
 	if (ret != NULL)
