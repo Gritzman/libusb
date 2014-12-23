@@ -52,7 +52,7 @@ void cb_in()
 }
 
 jint
-Java_DataRequest(JNIEnv * env, jobject this,
+Java_nok_pack_Device_DataRequest(JNIEnv * env, jobject this,
 		jbyteArray buffer_1, jbyteArray buffer_2, jint length_loc)
 {
 	unsigned char* bufferPtr_1 = (unsigned char* )((*env)->GetByteArrayElements(env, buffer_1,    NULL));
@@ -102,7 +102,7 @@ Java_DataRequest(JNIEnv * env, jobject this,
 }
 
 jint
-Java_SendData(JNIEnv * env, jobject this,
+Java_nok_pack_Device_SendData(JNIEnv * env, jobject this,
 		jbyteArray cnfg, jint length)
 {
 	int actual_length = 0;
@@ -117,7 +117,7 @@ Java_SendData(JNIEnv * env, jobject this,
 }
 
 jstring
-Java_initUSB( JNIEnv* env, jobject thiz )
+Java_nok_pack_initUSB( JNIEnv* env, jobject thiz )
 {
   int r;
   __android_log_print(ANDROID_LOG_INFO, LOG_TAG, "entering iniUSB");
@@ -132,7 +132,7 @@ Java_initUSB( JNIEnv* env, jobject thiz )
 }
 
 jint
-Java_USBcheckDevice( JNIEnv* env, jobject this, jint vid, jint pid )
+Java_nok_pack_USBcheckDevice( JNIEnv* env, jobject this, jint vid, jint pid )
 {
 	 int i=0,ret = 0;
 
