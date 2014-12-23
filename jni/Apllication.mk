@@ -1,2 +1,2 @@
 APP_PLATFORM := android-16
-APP_MODULES = usbapp
+APP_MODULES = usbnok
