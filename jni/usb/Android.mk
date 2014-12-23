@@ -15,7 +15,7 @@ LOCAL_SRC_FILES:= \
 			
 LOCAL_LDLIBS := -llog
 
-LOCAL_MODULE := usbapp 
+LOCAL_MODULE := usbnok 
 
 
 include $(BUILD_SHARED_LIBRARY)  
