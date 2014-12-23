@@ -31,7 +31,19 @@
 #define ENDPOINT_BULK_OUT 0x12
 #define USB_CHUNC_SIZE 512
 
+libusb_context * ctx = NULL;
+libusb_device_handle *dev_handle = NULL;
 
+JNIEnv * callback_env;
+jobject callback_obj;
+jmethodID mid;
+jclass cls;
+struct libusb_transfer *transfer_in;
+
+int do_exit = 1;
+int grab_en = 1;
+
+jint length;
 
 void cb_in()
 {
